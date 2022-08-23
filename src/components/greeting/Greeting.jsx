@@ -43,23 +43,20 @@ const Greeting = () => {
       <h3 className='greeting__title'> {greetingMessage} </h3>
       {
         !isSubmitted ?
-          <form className='greeting__form'>
+          <form 
+          onSubmit={submitUser}
+          className='greeting__form'>
             <input
               type="text"
               className='greeting__input'
               onChange={event => { setUser(event.target.value) }}
             />
-            <button
-              type='submit'
-              onClick={submitUser}>
-              Submit
-            </button>
           </form>
           : (<span
             onClick={() => {
               setIsSubmitted(false)
             }}
-          >{name}</span>)
+          >{name}!</span>)
       }
     </div>
   )
