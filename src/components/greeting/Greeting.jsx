@@ -1,14 +1,15 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import './greeting.css'
 
 
 const Greeting = () => {
 
 
-  const [greetingMessage, setGreetingMessage] = useState("krazy")
-  const [user, setUser] = useState("")
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [greetingMessage, setGreetingMessage] = useState("")
+  const [user, setUser] = useState("User :)")
+  const [isSubmitted, setIsSubmitted] = useState(true)
 
 
 
@@ -25,6 +26,19 @@ const Greeting = () => {
     }
   }, [])
 
+  useEffect(() => {
+    const item = localStorage.getItem("user")
+    const loadedItem = JSON.parse(item)
+    if (loadedItem) {
+      setUser(loadedItem)
+    }
+  }
+    , [])
+
+  useEffect(() => {
+    const jsonUser = JSON.stringify(user)
+    localStorage.setItem("user", jsonUser)
+  }, [user])
 
   function submitUser(e) {
     e.preventDefault()
@@ -33,32 +47,37 @@ const Greeting = () => {
 
   let name;
   if (isSubmitted) {
-    name = user
+    name = <span>{user}</span>
   }
 
+  const openNameInput = () => {
+    setIsSubmitted(false);
+  }
   return (
 
     <div className='greeting__container'>
-      <h3 className='greeting__title'> {greetingMessage} </h3>
+      <h3> {greetingMessage} </h3>
       {
         !isSubmitted ?
-          <form 
-          onSubmit={submitUser}
-          className='greeting__form'>
+          <form
+            className='greeting__form'
+            onSubmit={submitUser}
+          >
             <input
               type="text"
-              className='greeting__input'
+              value={user}
               onChange={event => { setUser(event.target.value) }}
             />
           </form>
           : (<span
-            onClick={() => {
-              setIsSubmitted(false)
-            }}
-          >{name}!</span>)
-          
+            className='greeting__username'
+            onClick={openNameInput}
+          >
+            {name}
+          </span>)
+
       }
-          <div></div>
+
 
     </div>
   )

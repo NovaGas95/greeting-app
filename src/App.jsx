@@ -4,11 +4,20 @@ import Greeting from './components/greeting/Greeting'
 
 function App() {
   return (
-    <div className="App">
-      {/*<Time />*/}
-      <Greeting />
+    <div className="app-wrapper">
+      <div className="App">
+
+        {/*<div className="item2">
+        <Time />
+        </div>*/}
+        <div className="item3">
+          <Greeting />
+        </div>
+      </div>
     </div>
   );
 }
+
+
 
 export default App;
