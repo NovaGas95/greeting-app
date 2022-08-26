@@ -7,12 +7,13 @@ function App() {
     <div className="app-wrapper">
       <div className="App">
 
-        {/*<div className="item2">
-        <Time />
-        </div>*/}
+       <div>
+          <Time />
+        </div>
         <div className="item3">
           <Greeting />
-        </div>
+      </div>
+
       </div>
     </div>
   );
