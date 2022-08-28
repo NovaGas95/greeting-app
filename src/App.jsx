@@ -1,18 +1,23 @@
 import './App.css';
 import Time from './components/time/Time'
 import Greeting from './components/greeting/Greeting'
+import Weather from './components/weather/Weather';
 
 function App() {
   return (
     <div className="app-wrapper">
       <div className="App">
 
-       <div>
+        <div>
           <Time />
         </div>
-        <div className="item3">
+        <div>
           <Greeting />
-      </div>
+        </div>
+
+        <div>
+          <Weather />
+        </div>
 
       </div>
     </div>
