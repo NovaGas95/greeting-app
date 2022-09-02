@@ -1,8 +1,8 @@
 import React from 'react'
 import './search.css'
 import { AsyncPaginate } from 'react-select-async-paginate'
-import { useState, useEffect } from 'react'
-import { GEO_API_URL, geoApiOptions } from '../../api'
+import { useState } from 'react'
+import { GEO_API_URL, geoApiOptions } from '../../../api'
 
 
 

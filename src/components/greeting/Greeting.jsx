@@ -56,6 +56,7 @@ const Greeting = () => {
   return (
 
     <div className='greeting__container'>
+      
       <h3> {greetingMessage} </h3>
       {
         !isSubmitted ?
