@@ -2,6 +2,7 @@ import './App.css';
 import Time from './components/time/Time'
 import Greeting from './components/greeting/Greeting'
 import Weather from './components/weather/Weather';
+import Crypto from './components/crypto/Crypto';
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
 
         <div>
           <Weather />
+        </div>
+
+        <div>
+          <Crypto />
         </div>
 
       </div>

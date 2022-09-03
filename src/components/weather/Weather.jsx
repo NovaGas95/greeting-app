@@ -10,6 +10,7 @@ const Weather = () => {
   const [currentWeather, setCurrentWeather] = useState(null)
 
   const handleOnSearchChange = (searchData) => {
+
     const [lat, lon] = searchData.value.split(" ");
 
     fetch(
@@ -20,7 +21,6 @@ const Weather = () => {
       })
       .catch((err) => console.log(err))
 
-    console.log(currentWeather)
 
   }
   return (

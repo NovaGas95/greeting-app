@@ -3,7 +3,8 @@ import './currentWeather.css'
 
 
 const CurrentWeather = ({ data }) => {
-  return (
+return (
+ 
     <div className="weather">
       <div className="top">
         <div>
@@ -38,7 +39,10 @@ const CurrentWeather = ({ data }) => {
         </div>
       </div>
     </div>
-  );
+  
+)
 }
+
+
 
 export default CurrentWeather 
